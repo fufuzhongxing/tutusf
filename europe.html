@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>亚洲</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>亚洲</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="index.html">主页</a></li>
+            <li><a href="europe.html">欧洲</a></li>
+            <li><a href="cos.html">COS</a></li>
+        </ul>
+    </nav>
+    <div class="container">
+        <!-- Tab导航 -->
+        <div class="tabs">
+            <button class="tablink" onclick="openTab(event, 'tab1')">Tab 1</button>
+            <button class="tablink" onclick="openTab(event, 'tab2')">Tab 2</button>
+            <button class="tablink" onclick="openTab(event, 'tab3')">Tab 3</button>
+        </div>
+
+        <!-- Tab内容 -->
+        <div id="tab1" class="tabcontent">
+            <div class="tab-content">
+                <img src="images/asia-image.jpg" alt="Tab 1 图片">
+                <video controls>
+                    <source src="videos/asia-video.mp4" type="video/mp4">
+                    您的浏览器不支持视频播放。
+                </video>
+            </div>
+        </div>
+
+        <div id="tab2" class="tabcontent" style="display:none">
+            <div class="tab-content">
+                <img src="images/europe-image.jpg" alt="Tab 2 图片">
+                <video controls>
+                    <source src="videos/europe-video.mp4" type="video/mp4">
+                    您的浏览器不支持视频播放。
+                </video>
+            </div>
+        </div>
+
+        <div id="tab3" class="tabcontent" style="display:none">
+            <div class="tab-content">
+                <img src="images/cos-image.jpg" alt="Tab 3 图片">
+                <video controls>
+                    <source src="videos/cos-video.mp4" type="video/mp4">
+                    您的浏览器不支持视频播放。
+                </video>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <p>版权所有 © 2024</p>
+        <p>联系方式: <a href="mailto:your-email@example.com">your-email@example.com</a></p>
+    </footer>
+
+    <script>
+        function openTab(evt, tabName) {
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tabcontent");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+            tablinks = document.getElementsByClassName("tablink");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+            }
+            document.getElementById(tabName).style.display = "block";
+            evt.currentTarget.className += " active";
+        }
+
+        // 默认打开第一个tab
+        document.getElementsByClassName("tablink")[0].click();
+    </script>
+</body>
+</html>
